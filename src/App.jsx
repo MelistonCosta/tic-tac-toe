@@ -8,7 +8,7 @@ function App() {
       <main>
         <div id="game-container">
           <ol id="players">
-            <Player name="Meliston" symbol="X" />
+            <Player name="Meliston" symbol="X" noEdit />
             <Player name="You" symbol="O" />
           </ol>
           Game Board...
