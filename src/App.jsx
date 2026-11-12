@@ -1,18 +1,19 @@
 import Feedback from "./components/Feedback"
+import GameBoard from "./components/GameBoard"
 import Header from "./components/Header"
 import Player from "./components/Player"
 
 function App() {
   return (
     <>
-      <Header/ >
+      <Header />
       <main>
         <div id="game-container">
           <ol id="players">
             <Player initialName="Meliston" symbol="X" noEdit />
             <Player initialName="You" symbol="O" />
           </ol>
-          Game Board...
+          <GameBoard />
         </div>
         Log...
       </main>
