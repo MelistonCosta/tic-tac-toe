@@ -28,3 +28,5 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
         </ol>
     )
 }
+
+
