@@ -47,7 +47,8 @@ function App() {
     const secondSquareSymbol = gameBoard[combination[1].row][combination[1].column];
     const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].column];
     if (firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol === thirdSquareSymbol ) {
-      winner = firstSquareSymbol;
+      // winner = firstSquareSymbol;
+      winner = players[firstSquareSymbol];
     }
   }
 
@@ -85,8 +86,8 @@ function App() {
       <main>
         <div id="game-container">
           <ol id="players" className="highlight-player">
-            <Player initialName="Meliston" symbol='X' isActive={activePlayer === 'X'} /> {/* noEdit */}
-            <Player initialName="You" symbol='O' isActive={activePlayer === 'O'} />
+            <Player initialName="Meliston" symbol='X' isActive={activePlayer === 'X'} onChangeName={handlePlayerNameChange} /> {/* noEdit */}
+            <Player initialName="You" symbol='O' isActive={activePlayer === 'O'} onChangeName={handlePlayerNameChange} />
           </ol>
           {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleRestart} />}
           <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
