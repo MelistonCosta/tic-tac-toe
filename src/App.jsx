@@ -60,6 +60,11 @@ function App() {
       return updatedTurns;
     });
   }
+
+  function handleRestart() {
+    setGameTurns([]);
+  }
+
   return (
     <>
       <Header />
@@ -69,7 +74,7 @@ function App() {
             <Player initialName="Meliston" symbol='X' isActive={activePlayer === 'X'} /> {/* noEdit */}
             <Player initialName="You" symbol='O' isActive={activePlayer === 'O'} />
           </ol>
-          {(winner || hasDraw) && <GameOver winner={winner} />}
+          {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleRestart} />}
           <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
         </div>
         <Log turns={gameTurns} />
