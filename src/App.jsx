@@ -15,7 +15,7 @@ function App() {
       if (prevTurns.lenght > 0 && prevTurns[0].player === "X") {
         currentPlayer = "O";
       }
-      const updatedTurns = [{ square: {row: rowIndex, col: colIndex}, player: activePlayer }, ...prevTurns]
+      const updatedTurns = [{ square: {row: rowIndex, col: colIndex}, player: currentPlayer }, ...prevTurns]
       return updatedTurns;
     });
   }
